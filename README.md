@@ -1,24 +1,24 @@
 # 打包命令
 ```docker
-docker build --rm -t spider-mongo:4.4.0 -f Dockerfile .
-docker tag spider-mongo:4.4.0 cjr0707/spider-mongo:4.4.0
-docker push cjr0707/spider-mongo:4.4.0
+docker build --rm -t cjr-mongo:6.0.1 -f Dockerfile .
+docker tag cjr-mongo:6.0.1 cjr0707/cjr-mongo:6.0.1
+docker push cjr0707/cjr-mongo:6.0.1
 ```
 
 # 运行命令
 ```docker
-docker run -d --name spider-mongo \
-    -v /data/db/mongo:/data/db \
-    -p 27017:27017 cjr0707/spider-mongo:4.4.0
+docker run -d --name cjr-mongo \
+    -v ~/db-data/mongo:/data/db \
+    -p 27017:27017 cjr-mongo:6.0.1
 # 或者加上restart
-docker run -d --name spider-mongo \
+docker run -d --name cjr-mongo \
     --restart always \
-    -v /data/db/mongo:/data/db \
-    -p 27017:27017 cjr0707/spider-mongo:4.4.0
+    -v ~/db-data/mongo:/data/db \
+    -p 27017:27017 cjr-mongo:6.0.1
 ```
 
 # 容器中
 
 配置文件在`/etc/mongo/mongo.conf`
 
-rdb在`/data/db`
+rdb在`~/db-data/mongo`

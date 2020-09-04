@@ -1,6 +1,6 @@
-FROM mongo:4.4.0
+FROM mongo:6.0.1
 
-MAINTAINER cjr0707
+MAINTAINER JerryChen
 
 ENV TZ Asia/Shanghai
 
